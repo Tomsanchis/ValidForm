@@ -23,8 +23,12 @@ const checkform = () => {
       if (!(password.value === repeatpassword.value)) {
         passwordselect[i].textContent =
           "❌ Les deux Password doivent etre indentiques";
+      }
+      if (password.value.length < 12 || repeatpassword.value.length < 12) {
         passwordselect[i].textContent =
-          "❌ Les deux Password doivent etre indentiques";
+          "❌ Les Password doi etre superieure à 12 caractères";
+      } else {
+        passwordselect[i].textContent = "";
       }
     }
   });
